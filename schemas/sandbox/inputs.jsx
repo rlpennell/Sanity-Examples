@@ -1,6 +1,5 @@
 import {Swatch, RolesBasedArrayInput, AsyncSelect, CustomImagePreview} from './components'
 import {pageBlocks} from './componentDependencies/pageBlocks'
-import {Boilerplate} from './components/Boilerplate'
 
 export const inputs = {
   name: 'inputs',
@@ -10,18 +9,9 @@ export const inputs = {
     {
       name: 'title',
       type: 'string',
-      initialValue: 'inputs',
+      initialValue: 'Inputs',
       readOnly: true,
       hidden: true,
-    },
-    {
-      name: 'boilerplate',
-      type: 'string',
-      initialValue: 'Inputs',
-      components: {
-        input: Boilerplate,
-      },
-      readOnly: true,
     },
     {
       title: 'Image with Palette Swatch',
