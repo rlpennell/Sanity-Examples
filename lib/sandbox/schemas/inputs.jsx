@@ -68,7 +68,7 @@ export const inputs = {
     },
     {
       name: 'customImagePreview',
-      title: 'Custom Image Preview',
+      title: 'Custom Media Document Preview',
       type: 'reference',
       to: [{type: 'media', components: {preview: CustomImagePreview}}],
     },

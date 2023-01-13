@@ -1,5 +1,6 @@
 export const sandbox = {
   name: 'sandbox',
+  title: 'Sandbox',
   type: 'document',
   fields: [
     {
@@ -10,4 +11,4 @@ export const sandbox = {
       hidden: true,
     },
   ],
-}
+};
