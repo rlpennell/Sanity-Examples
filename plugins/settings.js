@@ -3,7 +3,7 @@ import {
   HelpCircleIcon,
   ComponentIcon,
   PlugIcon,
-  CodeIcon,
+  EarthAmericasIcon,
 } from '@sanity/icons';
 
 export const singletonPlugin = types => ({
@@ -18,8 +18,11 @@ export const singletonPlugin = types => ({
   },
 });
 
-export const structure = (S, context) =>
-  S.list()
+export const structure = (S, context) => {
+  // const { currentUser, dataset, projectId, documentStore, getClient, schema } =
+  //   context;
+
+  return S.list()
     .title('Sanity Love Content')
     .items([
       S.listItem()
@@ -53,5 +56,9 @@ export const structure = (S, context) =>
                 ),
             ])
         ),
-      S.listItem().title('Primitives').icon(CodeIcon),
+      S.listItem()
+        .title('Common Schemas')
+        .icon(EarthAmericasIcon)
+        .child(S.document().id('commonSchemas').schemaType('commonSchemas')),
     ]);
+};

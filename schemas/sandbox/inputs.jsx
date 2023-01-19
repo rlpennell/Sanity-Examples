@@ -1,5 +1,10 @@
-import {Swatch, RolesBasedArrayInput, AsyncSelect, CustomImagePreview} from './components'
-import {pageBlocks} from './componentDependencies/pageBlocks'
+import {
+  Swatch,
+  RolesBasedArrayInput,
+  AsyncSelect,
+  CustomImagePreview,
+} from './components';
+import { pageBlocks } from './componentDependencies/pageBlocks';
 
 export const inputs = {
   name: 'inputs',
@@ -27,14 +32,14 @@ export const inputs = {
           },
           options: {
             list: [
-              {title: 'Dominant', value: 'dominant'},
-              {title: 'Vibrant', value: 'vibrant'},
-              {title: 'Light Vibrant', value: 'lightVibrant'},
-              {title: 'Dark Vibrant', value: 'darkVibrant'},
-              {title: 'Muted', value: 'muted'},
-              {title: 'Light Muted', value: 'lightMuted'},
-              {title: 'Dark Muted', value: 'darkMuted'},
-              {title: 'Custom', value: 'custom'},
+              { title: 'Dominant', value: 'dominant' },
+              { title: 'Vibrant', value: 'vibrant' },
+              { title: 'Light Vibrant', value: 'lightVibrant' },
+              { title: 'Dark Vibrant', value: 'darkVibrant' },
+              { title: 'Muted', value: 'muted' },
+              { title: 'Light Muted', value: 'lightMuted' },
+              { title: 'Dark Muted', value: 'darkMuted' },
+              { title: 'Custom', value: 'custom' },
             ],
           },
         },
@@ -44,7 +49,7 @@ export const inputs = {
       title: 'Roles Based Array',
       name: 'rolesBasedArray',
       type: 'array',
-      of: pageBlocks.map((block) => ({type: block.name, title: block.title})),
+      of: pageBlocks.map(block => ({ type: block.name, title: block.title })),
       components: {
         input: RolesBasedArrayInput,
       },
@@ -56,8 +61,8 @@ export const inputs = {
       options: {
         list: [],
         url: 'https://catfact.ninja/breeds',
-        formatResponse: (json) =>
-          json.data.map(({breed}) => ({
+        formatResponse: json =>
+          json.data.map(({ breed }) => ({
             title: breed,
             value: breed.toLowerCase().split(' ').join('-'),
           })),
@@ -70,7 +75,7 @@ export const inputs = {
       name: 'customImagePreview',
       title: 'Custom Media Document Preview',
       type: 'reference',
-      to: [{type: 'media', components: {preview: CustomImagePreview}}],
+      to: [{ type: 'media', components: { preview: CustomImagePreview } }],
     },
   ],
-}
+};
